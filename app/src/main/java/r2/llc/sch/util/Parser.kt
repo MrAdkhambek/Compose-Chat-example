@@ -13,7 +13,7 @@ class JoinUserParser : Parser {
     }
 
     companion object {
-        private val PARSER_REGEX = "\\<i\\>\"*(\\w+)+\"* (joined the chat.)<\\/i>".toRegex()
+        private val PARSER_REGEX = "\\<i\\>\"?([\\s\\d\\w]+)\"? (joined the chat.)<\\/i>".toRegex()
         const val USER_NAME: String = "user.name"
     }
 }
@@ -28,7 +28,7 @@ class LeftUserParser : Parser {
     }
 
     companion object {
-        private val PARSER_REGEX = "\\<i\\>\"*(\\w+)+\"* (left the chat.)<\\/i>".toRegex()
+        private val PARSER_REGEX = "\\<i\\>\"?([\\s\\d\\w]+)\"? (left the chat.)<\\/i>".toRegex()
         const val USER_NAME: String = "user.name"
     }
 }
@@ -47,7 +47,7 @@ class MessageParser : Parser {
     }
 
     companion object {
-        private val PARSER_REGEX = "\\<strong\\>\"*(\\w+)+\"*\\<\\/strong\\>: \"*(\\w+)+\"*".toRegex()
+        private val PARSER_REGEX = "\\<strong\\>\"?([\\s\\d\\w]+)\"?\\<\\/strong\\>: \"?([\\s\\d\\w]+)\"?".toRegex()
         const val USER_NAME: String = "user.name"
         const val MESSAGE: String = "user.message"
     }
