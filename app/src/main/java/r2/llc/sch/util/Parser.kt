@@ -47,7 +47,7 @@ class MessageParser : Parser {
     }
 
     companion object {
-        private val PARSER_REGEX = "\\<strong\\>(\\w+)+\\<\\/strong\\>: (\\w+)+".toRegex()
+        private val PARSER_REGEX = "\\<strong\\>\"*(\\w+)+\"*\\<\\/strong\\>: \"*(\\w+)+\"*".toRegex()
         const val USER_NAME: String = "user.name"
         const val MESSAGE: String = "user.message"
     }
